@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-dotenv
+groq
+python-multipart
+jinja2
+pydantic
+pydantic-settings
+aiofiles
+pytest
+httpx

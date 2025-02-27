@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Groq Chat Interface</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body>
+    <div id="sidebar">
+      <h2>Chat Parameters</h2>
+      <div class="parameter-group">
+        <label for="system_prompt">System Prompt:</label>
+        <textarea id="system_prompt" rows="4">You are a helpful AI assistant.</textarea>
+      </div>
+
+      <div class="parameter-group">
+        <button type="button" onclick="clearChat()" class="clear-button">Clear Chat</button>
+      </div>
+
+      <div class="parameter-group">
+        <label for="model">Model:</label>
+        <select id="model">
+          <!-- Production Models -->
+          <optgroup label="Production Models">
+            <option value="llama-3.3-70b-versatile">LLaMA 3.3 70B Versatile</option>
+            <option value="llama-3.1-8b-instant">LLaMA 3.1 8B Instant</option>
+            <option value="llama-guard-3-8b">LLaMA Guard 3 8B</option>
+            <option value="llama3-70b-8192">LLaMA 3 70B (8K)</option>
+            <option value="llama3-8b-8192">LLaMA 3 8B (8K)</option>
+            <option value="mixtral-8x7b-32768">Mixtral 8x7B (32K)</option>
+            <option value="gemma2-9b-it">Gemma 2 9B</option>
+          </optgroup>
+          <!-- Preview Models -->
+          <optgroup label="Preview Models">
+            <option value="mistral-saba-24b">Mistral Saba 24B</option>
+            <option value="qwen-2.5-coder-32b">Qwen 2.5 Coder 32B</option>
+            <option value="qwen-2.5-32b">Qwen 2.5 32B</option>
+            <option value="deepseek-r1-distill-qwen-32b">DeepSeek R1 Distill Qwen 32B</option>
+            <option value="deepseek-r1-distill-llama-70b-specdec">DeepSeek R1 Distill LLaMA 70B SpecDec</option>
+            <option value="deepseek-r1-distill-llama-70b">DeepSeek R1 Distill LLaMA 70B</option>
+            <option value="llama-3.3-70b-specdec">LLaMA 3.3 70B SpecDec</option>
+            <option value="llama-3.2-1b-preview">LLaMA 3.2 1B Preview</option>
+            <option value="llama-3.2-3b-preview">LLaMA 3.2 3B Preview</option>
+          </optgroup>
+        </select>
+      </div>
+      
+      <div class="parameter-group">
+        <label for="temperature">Temperature:</label>
+        <input type="range" id="temperature" min="0" max="2" step="0.1" value="0.7">
+        <span id="temperatureValue">0.7</span>
+      </div>
+
+      <div class="parameter-group">
+        <label for="max_tokens">Max Tokens:</label>
+        <input type="number" id="max_tokens" value="1000" min="1" max="4096">
+      </div>
+
+      <div class="parameter-group">
+        <label for="top_p">Top P:</label>
+        <input type="range" id="top_p" min="0" max="1" step="0.1" value="0.7">
+        <span id="topPValue">0.7</span>
+      </div>
+
+      <div class="parameter-group">
+        <label>Options:</label>
+        <div>
+          <input type="checkbox" id="stream">
+          <label for="stream">Stream Response</label>
+        </div>
+      </div>
+
+      <div class="parameter-group">
+        <label for="reasoning_format">Reasoning Format:</label>
+        <select id="reasoning_format">
+          <option value="parsed">Parsed</option>
+          <option value="raw">Raw</option>
+          <option value="none">None</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <h1>Groq Chat</h1>
+      <div id="chat-container"></div>
+      <div class="powered-by">Powered by Groq</div>
+      <form id="message-form" onsubmit="sendMessage(event)">
+        <input type="text" id="message-input" placeholder="Type your message here..." required>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
