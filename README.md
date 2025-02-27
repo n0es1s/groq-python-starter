@@ -15,7 +15,7 @@ A comprehensive starter kit for using the Groq Inference API with Python and Fas
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/groq-python-starter.git
+   git clone https://github.com/n0es1s/groq-python-starter.git
    cd groq-python-starter
    ```
 
