@@ -126,7 +126,7 @@ Key design decisions:
 The app supports three reasoning formats for compatible models:
 - **Raw**: Shows the model's internal reasoning in a separate section
 - **Parsed**: Shows a more structured version of reasoning
-- **None**: Hides reasoning completely
+- **Hidden**: Hides reasoning completely
 
 To implement custom reasoning parsing, modify the `script.js` file.
 
