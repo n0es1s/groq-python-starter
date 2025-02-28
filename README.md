@@ -96,3 +96,5 @@ MIT
         <think>Some response to user... 
         ```
     This will cause the response to show inside the reasoning UI area instead of the assistant response message bubble 
+
+- Tooltips are not always visible in the chat parameters side panel
