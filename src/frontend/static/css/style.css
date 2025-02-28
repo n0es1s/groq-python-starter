@@ -214,10 +214,13 @@
   }
   
   .title-container h1 {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 36px;
+    font-weight: 300;
     margin: 0;
-    color: var(--text-color);
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    font-family: 'Poppins', sans-serif;
   }
   
   .subtitle {
@@ -678,4 +681,47 @@
       height: 30px;
       margin: 0 var(--spacing-2);
     }
+  }
+  
+  /* Settings tab styling */
+  #settings-tab {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    padding: var(--spacing-2);
+    box-shadow: var(--shadow-md);
+    z-index: 100;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0.7; /* Make it slightly transparent by default */
+  }
+  
+  #settings-tab.hidden {
+    display: none;
+  }
+  
+  #settings-tab:hover {
+    opacity: 1; /* Make it fully opaque on hover */
+    background-color: var(--primary-dark);
+  }
+  
+  #settings-tab .icon-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: var(--spacing-2);
+  }
+  
+  /* Modify the sidebar-hidden class to completely hide the sidebar */
+  .sidebar-hidden #sidebar {
+    display: none;
+    width: 0;
+  }
+  
+  /* When sidebar is hidden, expand the main content */
+  .sidebar-hidden .main-content {
+    width: 100%;
   }

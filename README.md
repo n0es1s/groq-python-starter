@@ -2,6 +2,13 @@
 
 A comprehensive starter kit for using the Groq Inference API with Python and FastAPI.
 
+## Screenshots
+
+![Initial UI](https://imagedelivery.net/zXlq05wYFoBwvKqP-va6Ow/c0de54bf-9bd2-4ccc-cf92-321fee26cc00/public)
+
+![Reasoning + Streaming](https://imagedelivery.net/zXlq05wYFoBwvKqP-va6Ow/c26fdb41-6f2b-42eb-82aa-261c9f6bba00/public)
+
+
 ## Features
 
 - FastAPI backend with organized routes and services

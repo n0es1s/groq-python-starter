@@ -8,23 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('topPValue').textContent = e.target.value;
   });
   
-  // Handle sidebar toggling
+  // Handle sidebar toggling with the new approach
   const toggleSidebarBtn = document.getElementById('toggle-sidebar');
+  const expandSidebarBtn = document.getElementById('expand-sidebar');
+  const settingsTab = document.getElementById('settings-tab');
+  
   if (toggleSidebarBtn) {
     toggleSidebarBtn.addEventListener('click', function() {
-      document.body.classList.toggle('sidebar-collapsed');
-      
-      // Change the icon based on state
-      const icon = this.querySelector('i');
-      if (document.body.classList.contains('sidebar-collapsed')) {
-        icon.classList.remove('bi-arrows-angle-contract');
-        icon.classList.add('bi-arrows-angle-expand');
-        this.setAttribute('title', 'Expand sidebar');
-      } else {
-        icon.classList.remove('bi-arrows-angle-expand');
-        icon.classList.add('bi-arrows-angle-contract');
-        this.setAttribute('title', 'Collapse sidebar');
-      }
+      document.body.classList.add('sidebar-hidden');
+      settingsTab.classList.remove('hidden');
+    });
+  }
+  
+  if (expandSidebarBtn) {
+    expandSidebarBtn.addEventListener('click', function() {
+      document.body.classList.remove('sidebar-hidden');
+      settingsTab.classList.add('hidden');
     });
   }
   
@@ -73,14 +72,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function clearChat() {
   const chatContainer = document.getElementById('chat-container');
-  // Add welcome message back
+  // Add welcome message back that matches the original one
   chatContainer.innerHTML = `
     <div class="welcome-message">
-      <div class="welcome-icon">
-        <img src="https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg" alt="Groq Logo" />
+      <h2>Welcome to Groq API Model Playground</h2>
+      <p>Select your model and chat parameters in the left sidebar, and send a message below to get started!</p>
+      <div class="branding">
+        <a href="https://groq.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://groq.com/wp-content/uploads/2024/03/PBG-mark1-color.svg"
+            alt="Powered by Groq"
+          />
+        </a>
       </div>
-      <h2>Welcome to Groq Chat</h2>
-      <p>Ask me anything! I'm powered by Groq's high-performance inference API.</p>
     </div>
   `;
   

@@ -89,7 +89,7 @@ async def chat(
             tokens_per_second = 0.0
         
         # Process newlines in the message to convert them to <br> tags
-        processed_message = assistant_message.replace('\n', '<br>')
+        processed_message = assistant_message.replace('\n', '')
         
         return f"""<!DOCTYPE html>
 <html><body>
