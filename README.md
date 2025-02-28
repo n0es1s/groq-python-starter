@@ -10,7 +10,8 @@ A comprehensive starter kit for using the Groq Inference API with Python and Fas
 
 ## Video Demo
 
-<video src="groq-python-starter.m4v" controls title="Groq Python Starter Demo"></video>
+[![Groq Python Starter Demo](https://imagedelivery.net/zXlq05wYFoBwvKqP-va6Ow/b53d5d2c-8bd9-4bb8-38fe-8542a934b200/public)](https://customer-h1dmd6g74echkjh3.cloudflarestream.com/3b860dac186bb01b981b7f879e857724/watch)
+
 
 
 ## Features
