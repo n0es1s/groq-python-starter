@@ -21,7 +21,7 @@ A comprehensive starter kit for using the Groq Inference API with Python and Fas
 - Support for all Groq models
 - Customizable parameters (temperature, max tokens, etc.)
 - Streaming response support
-- Audio transcription endpoint (placeholder)
+- Audio transcription endpoint (Coming Soon)
 
 ## Setup
 
@@ -66,7 +66,7 @@ A comprehensive starter kit for using the Groq Inference API with Python and Fas
 
 ### Audio
 
-- `POST /audio/transcribe` - Transcribe audio using Groq (placeholder)
+- `POST /audio/transcribe` - Transcribe audio using Groq (Coming Soon)
 
 ## Usage Examples
 
