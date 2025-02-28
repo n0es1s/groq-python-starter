@@ -88,14 +88,15 @@ async def chat(
         except (KeyError, ValueError, TypeError):
             tokens_per_second = 0.0
         
-        return f"""
-        <!DOCTYPE html>
-        <html><body>
-            <div data-total-tokens="{total_tokens}" data-tokens-per-second="{tokens_per_second}">
-                <p>{assistant_message}</p>
-            </div>
-        </body></html>
-        """
+        # Process newlines in the message to convert them to <br> tags
+        processed_message = assistant_message.replace('\n', '<br>')
+        
+        return f"""<!DOCTYPE html>
+<html><body>
+    <div data-total-tokens="{total_tokens}" data-tokens-per-second="{tokens_per_second}">
+        <p>{processed_message}</p>
+    </div>
+</body></html>"""
 
 @router.post("/clear-chat")
 async def clear_chat(groq_service: GroqService = Depends(get_groq_service)):

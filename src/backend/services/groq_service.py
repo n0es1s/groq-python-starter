@@ -61,7 +61,7 @@ class GroqService:
         
         # Get response from Groq
         chat_completion = self.client.chat.completions.create(**completion_params)
-        print(self.client.models.list())
+
         # Print the entire response object (or first chunk when streaming)
         print("Groq API Response Started:")
         
