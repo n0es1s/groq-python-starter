@@ -88,3 +88,11 @@ Check the `examples/` directory for standalone scripts demonstrating:
 ## License
 
 MIT
+
+## Known Issues 
+- currently the total output tokens and tokens/second numbers are not accurate. Need to leverage the api response for actual data. 
+- At times a reasoning model streaming with raw reasoning output may respond inside of an incomplete thinking: block. 
+        ```
+        <think>Some response to user... 
+        ```
+    This will cause the response to show inside the reasoning UI area instead of the assistant response message bubble 
